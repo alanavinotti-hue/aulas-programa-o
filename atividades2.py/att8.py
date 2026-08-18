@@ -1,0 +1,47 @@
+class PetVirtual:
+    def __init__(self, nome):
+        self.nome = nome
+        self.fome = 5
+        self.felicidade = 5
+
+     
+    def alimentar(self):
+        if self.fome > 0:
+            self.fome -= 2
+        if self.fome < 0:
+          self.fome = 0
+          print(f"{self.nome} foi alimentado! Fome atual: {self.fome}")
+        else:
+          print(f"{self.nome} já está de barriga cheia!")
+
+
+
+    
+    def brincar(self):
+        self.felicidade += 2
+        self.fome += 1
+        print(f"Você brincou com {self.nome}! Felicidade: {self.felicidade} | Fome: {self.fome}")
+
+    
+    def status(self):
+        print(f"\n--- STATUS DE {self.nome.upper()} ---")
+        print(f"Fome: {self.fome}")
+        print(f"Felicidade: {self.felicidade}")
+        
+       
+        if self.fome >= 8:
+            print(f"Atenção: {self.nome} precisa comer!")
+        print("-" * 25)
+
+
+meu_pet = PetVirtual("Pou")
+meu_pet.status()
+meu_pet.brincar()
+meu_pet.brincar()
+
+meu_pet.alimentar()
+meu_pet.alimentar()
+meu_pet.alimentar()
+
+
+meu_pet.status()
